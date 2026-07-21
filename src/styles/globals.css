@@ -1,0 +1,21 @@
+@import "./tokens.css";
+@import "./theme.css";
+
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+
+  body {
+    margin: 0;
+    font-family: var(--font-family-body);
+    color: var(--color-text-primary);
+    background: var(--color-background);
+  }
+
+}

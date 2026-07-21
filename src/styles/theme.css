@@ -1,0 +1,27 @@
+@theme {
+
+  --color-primary:
+    var(--brand-600);
+
+  --color-primary-hover:
+    var(--brand-700);
+
+
+  --color-background:
+    var(--neutral-50);
+
+  --color-surface:
+    var(--neutral-0);
+
+
+  --color-text-primary:
+    var(--neutral-900);
+
+  --color-text-secondary:
+    var(--neutral-600);
+
+
+  --radius-card:
+    var(--radius-lg);
+
+}
