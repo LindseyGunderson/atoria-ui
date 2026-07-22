@@ -1,0 +1,56 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+
+# Button
+
+Buttons trigger actions or events.
+
+## Usage
+
+Use buttons for actions that change state, submit information,
+or navigate users through a workflow.
+
+## Variants
+
+### Primary
+Used for the main action on a page.
+<Canvas of={ButtonStories.Primary} />
+
+### Secondary
+
+Used for supporting actions.
+<Canvas of={ButtonStories.Secondary} />
+
+### Ghost
+
+Used for low-emphasis actions.
+<Canvas of={ButtonStories.Ghost} />
+
+### Loading
+
+Used for loading actions.
+<Canvas of={ButtonStories.Loading} />
+
+### Disabled
+Used for disabled actions.
+
+<Canvas of={ButtonStories.Disabled} />
+
+
+### Sizes
+
+<Canvas of={ButtonStories.Small} />
+<Canvas of={ButtonStories.Medium} />
+<Canvas of={ButtonStories.Large} />
+
+## Accessibility
+
+Atoria buttons:
+
+- Use native button semantics
+- Support keyboard navigation
+- Preserve focus states
+- Communicate loading state
