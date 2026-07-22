@@ -1,0 +1,57 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import * as SpinnerStories from "./Spinner.stories";
+import { Spinner } from "./Spinner";
+
+<Meta of={SpinnerStories} />
+
+# Spinner
+
+The Spinner component provides visual feedback when an action or process is loading.
+
+Use Spinner when the interface needs to communicate that work is happening asynchronously.
+
+## Usage
+
+Spinner is commonly used for:
+
+- Loading states
+- Data fetching
+- Form submissions
+- Background processes
+
+Avoid using Spinner when the user needs more detailed progress information.
+For longer processes, consider using a progress indicator instead.
+
+## Sizes
+
+Spinner supports three sizes depending on the context.
+
+<Canvas of={SpinnerStories.Sizes} />
+
+## Variants
+
+Spinner supports different color variants for different surfaces.
+
+<Canvas of={SpinnerStories.Variants} />
+
+## Accessibility
+
+Spinner communicates loading status through accessible attributes.
+
+- Uses `role="status"` to communicate a status update.
+- Provides an accessible label describing the loading state.
+- Should be paired with descriptive text whenever possible.
+
+Example:
+
+```tsx
+<Spinner label="Saving your changes" />
+```
+
+## Composition
+
+Spinner can be combined with other components to communicate loading states.
+
+For example, Button uses Spinner internally when the loading state is active.
+
+<Canvas of={SpinnerStories.ButtonExample} />

@@ -1,12 +1,14 @@
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../utils/cn";
+import { Spinner } from "../Spinner";
 
 const buttonVariants = cva(
   [
     "inline-flex",
     "items-center",
     "justify-center",
+    "gap-2",
     "rounded-md",
     "font-medium",
     "transition-colors",
@@ -67,8 +69,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={loading || props.disabled}
         {...props}
       >
-        {loading && <span aria-hidden="true">◌</span>}
-
+        {loading && <Spinner size="sm" variant="inverse" />}
         {children}
       </button>
     );
