@@ -1,0 +1,48 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import * as IconStories from "./Icon.stories";
+
+<Meta of={IconStories} />
+
+## Icon Library Support
+
+Atoria does not bundle a specific icon library.
+
+Instead, the Icon component accepts any SVG-compatible React component, allowing applications to use their preferred icon solution.
+
+Compatible examples include:
+
+- Lucide
+- Heroicons
+- Custom SVG components
+- Internal company icon libraries
+
+This keeps Atoria flexible and prevents consumers from being locked into a specific icon provider.
+
+## Sizes
+
+Icons use predefined sizes to maintain consistency across the design system.
+
+<Canvas of={IconStories.Sizes} />
+
+
+## Accessibility
+
+Icons are decorative by default.
+
+When an icon communicates meaning without accompanying text, provide an accessible label.
+
+Example:
+
+```tsx
+<Icon
+  icon={CheckIcon}
+  decorative={false}
+/>
+```
+
+
+## Composition
+
+The Icon component is designed to work with other Atoria components.
+
+Components can consume Icon without depending on a specific icon library.
