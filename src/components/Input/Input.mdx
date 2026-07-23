@@ -1,0 +1,138 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as InputStories from "./Input.stories";
+
+<Meta of={InputStories} />
+
+# Input
+
+The `Input` component provides a consistent, accessible foundation for collecting user input across Atoria UI.
+
+It wraps the native HTML `<input>` element while adding semantic styling, accessibility improvements, and common form features such as labels, helper text, and error messages.
+
+---
+
+## Features
+
+- Accessible label association
+- Helper and error messaging
+- Semantic validation states
+- Native HTML input support
+- Disabled and required states
+- Theme-aware styling
+- Forwarded refs for integration with forms
+
+---
+
+## Default
+
+<Canvas of={InputStories.Default} />
+
+The default input behaves exactly like a native HTML input while adopting Atoria's design tokens.
+
+---
+
+## Label
+
+<Canvas of={InputStories.WithLabel} />
+
+Labels are automatically associated with their corresponding input using `htmlFor` and React's `useId()`. This ensures screen readers correctly announce the relationship between the label and its field.
+
+---
+
+## Helper Text
+
+<Canvas of={InputStories.WithHelperText} />
+
+Helper text provides additional guidance without interrupting the user's workflow.
+
+Use helper text for:
+
+- Formatting hints
+- Password requirements
+- Additional context
+- Expectations before submission
+
+---
+
+## Error State
+
+<Canvas of={InputStories.Error} />
+
+When an error is supplied:
+
+- the input receives `aria-invalid`
+- the error message is associated using `aria-describedby`
+- semantic error colors are applied
+- focus styles reinforce the validation state
+
+The component separates visual styling from validation logic. Validation should come from your application, while the Input simply communicates the result.
+
+---
+
+## Required
+
+<Canvas of={InputStories.Required} />
+
+Required fields display a visual indicator while preserving native browser validation through the `required` attribute.
+
+---
+
+## Disabled
+
+<Canvas of={InputStories.Disabled} />
+
+Disabled inputs maintain accessibility while clearly communicating that the field is unavailable.
+
+---
+
+## Form Example
+
+<Canvas of={InputStories.FormExample} />
+
+This example demonstrates how multiple Input components work together inside a typical form.
+
+---
+
+## Native HTML Support
+
+Input extends the native HTML input element.
+
+That means all standard HTML attributes continue to work:
+
+```tsx
+<Input
+  type="email"
+  placeholder="you@example.com"
+  autoComplete="email"
+  disabled
+  required
+/>
+```
+
+This approach keeps the component lightweight while remaining familiar to React developers.
+
+---
+
+## Accessibility
+
+The Input component includes several accessibility improvements by default:
+
+- Automatic ID generation using `useId()`
+- Label association with `htmlFor`
+- `aria-invalid` for validation errors
+- `aria-describedby` for helper and error text
+- Forwarded refs for form libraries and focus management
+
+These enhancements require little additional configuration while improving the experience for assistive technologies.
+
+---
+
+## Design Philosophy
+
+Atoria treats the Input as a lightweight wrapper around the native HTML element—not as a replacement.
+
+Rather than introducing custom APIs for common HTML behavior, the component embraces native browser capabilities and adds only the functionality needed for a consistent design system.
+
+This keeps the component predictable, accessible, and easy to integrate into any React application.
+
+<Controls />

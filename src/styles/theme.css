@@ -24,4 +24,6 @@
   --radius-card:
     var(--radius-lg);
 
+     --color-error: var(--error-color);
+
 }
