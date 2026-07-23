@@ -1,0 +1,229 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as BadgeStories from "./Badge.stories";
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+The `Badge` component communicates small pieces of contextual information such as status, category, or metadata.
+
+Badges are designed to support content, not replace it. They should provide quick visual recognition without becoming the primary focus of the interface.
+
+---
+
+## When to use Badge
+
+Use Badge when you need to communicate:
+
+- Status
+- Categories
+- Labels
+- Short metadata
+- Informational states
+
+Examples:
+
+- Account status
+- Content state
+- Feature availability
+- Workflow progress
+
+```tsx
+<Badge variant="success">
+  Active
+</Badge>
+```
+
+---
+
+## When not to use Badge
+
+Badges should not be used for interactive actions.
+
+Avoid using Badge as:
+
+- A button
+- A navigation element
+- A filter control
+- A clickable tag
+
+For interactive elements, use components designed for user actions instead.
+
+---
+
+## Default
+
+<Canvas of={BadgeStories.Default} />
+
+By default, Badge uses the neutral variant.
+
+This provides a low-emphasis way to communicate information without implying a specific state.
+
+---
+
+## Variants
+
+<Canvas of={BadgeStories.Variants} />
+
+Badge variants communicate different semantic meanings.
+
+<table>
+  <thead>
+    <tr>
+      <th>Variant</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Neutral</td>
+      <td>General information</td>
+    </tr>
+
+    <tr>
+      <td>Primary</td>
+      <td>Highlighted information</td>
+    </tr>
+
+    <tr>
+      <td>Success</td>
+      <td>Positive status or completion</td>
+    </tr>
+
+    <tr>
+      <td>Warning</td>
+      <td>Attention required</td>
+    </tr>
+
+    <tr>
+      <td>Error</td>
+      <td>Failure or destructive state</td>
+    </tr>
+
+    <tr>
+      <td>Info</td>
+      <td>Informational messaging</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Sizes
+
+<Canvas of={BadgeStories.Sizes} />
+
+Badge supports two sizes:
+
+- `sm` for compact interfaces
+- `md` for standard usage
+
+Badges should remain visually lightweight and should not compete with primary content.
+
+---
+
+## Real-world Examples
+
+<Canvas of={BadgeStories.StatusExamples} />
+
+Common examples include:
+
+- Active accounts
+- Pending reviews
+- Completed actions
+- Experimental features
+- Content states
+
+---
+
+## Semantic Colors
+
+Badge uses Atoria's semantic color system rather than hard-coded colors.
+
+For example:
+
+```tsx
+<Badge variant="success">
+  Completed
+</Badge>
+```
+
+maps to the design system's success tokens.
+
+This allows colors to evolve globally while keeping components consistent.
+
+---
+
+## Accessibility
+
+Badge content should remain understandable without relying only on color.
+
+Good:
+
+```tsx
+<Badge variant="success">
+  Completed
+</Badge>
+```
+
+Avoid:
+
+```tsx
+<Badge variant="success" />
+```
+
+Color should reinforce meaning, not communicate information by itself.
+
+---
+
+## Design Philosophy
+
+Badges are intentionally simple components.
+
+They communicate:
+
+> "Here is additional context about this item."
+
+They do not:
+
+- trigger actions
+- manage state
+- replace buttons
+- replace form controls
+
+Keeping this responsibility clear allows Badge to remain predictable and reusable throughout an application.
+
+---
+
+## API
+
+### Variants
+
+```tsx
+<Badge variant="neutral">
+  Neutral
+</Badge>
+
+<Badge variant="success">
+  Success
+</Badge>
+
+<Badge variant="warning">
+  Warning
+</Badge>
+```
+
+### Sizes
+
+```tsx
+<Badge size="sm">
+  Small
+</Badge>
+
+<Badge size="md">
+  Medium
+</Badge>
+```
+
+<Controls />

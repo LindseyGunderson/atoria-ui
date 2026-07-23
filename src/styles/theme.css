@@ -24,6 +24,12 @@
   --radius-card:
     var(--radius-lg);
 
-     --color-error: var(--error-color);
+    /* ========================================
+    Feedback
+    ======================================== */
+    --color-error: #9f1239;
+    --color-success: #166534;
+    --color-warning: #a16207;
+    --color-info: #1e40af;
 
 }
