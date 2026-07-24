@@ -1,0 +1,301 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as TextareaStories from "./Textarea.stories";
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+The `Textarea` component allows users to enter and edit multi-line text.
+
+It is designed for longer responses, descriptions, notes, and other content where a single-line input is not appropriate.
+
+---
+
+## When to use Textarea
+
+Use Textarea when users need to provide:
+
+- Descriptions
+- Notes
+- Comments
+- Feedback
+- Longer responses
+
+Example:
+
+```tsx
+<Textarea
+  label="Description"
+  placeholder="Describe your request..."
+/>
+```
+
+---
+
+## Anatomy
+
+A Textarea consists of:
+
+- Label (optional)
+- Textarea input area
+- Helper text or validation message (optional)
+
+<Canvas of={TextareaStories.WithHelperText} />
+
+---
+
+## Default
+
+<Canvas of={TextareaStories.Default} />
+
+The default Textarea provides a clean multi-line input area without additional messaging.
+
+Use placeholder text to provide guidance about the expected input.
+
+---
+
+## Labels
+
+<Canvas of={TextareaStories.WithLabel} />
+
+Labels provide context about what information the user should enter.
+
+Labels should be used instead of relying only on placeholder text.
+
+Good:
+
+```tsx
+<Textarea label="Description" />
+```
+
+Avoid:
+
+```tsx
+<Textarea placeholder="Description" />
+```
+
+Placeholder text disappears after typing and should not replace labels.
+
+---
+
+## Helper Text
+
+<Canvas of={TextareaStories.WithHelperText} />
+
+Helper text provides additional guidance before the user interacts with the field.
+
+Use helper text for:
+
+- Formatting instructions
+- Input requirements
+- Additional context
+
+---
+
+## Error States
+
+<Canvas of={TextareaStories.Error} />
+
+Error messages communicate that the user's input needs attention.
+
+Textarea communicates errors through:
+
+- Visual error styling
+- `aria-invalid`
+- Accessible error messaging
+
+Example:
+
+```tsx
+<Textarea
+  label="Description"
+  error="Please enter more information"
+/>
+```
+
+---
+
+## Disabled State
+
+<Canvas of={TextareaStories.Disabled} />
+
+Disabled Textareas indicate that the field is currently unavailable.
+
+Disabled fields should be used carefully because users cannot interact with or modify the content.
+
+---
+
+## Resizing
+
+<Canvas of={TextareaStories.Resize} />
+
+Textarea supports vertical resizing to allow users to expand the input area when needed.
+
+The component uses:
+
+```css
+resize-y;
+```
+
+This allows users to increase the height while maintaining layout consistency.
+
+---
+
+## Long Content
+
+<Canvas of={TextareaStories.LongContent} />
+
+Textarea is designed to comfortably display multi-line content.
+
+Use the `rows` attribute to define the initial visible height:
+
+```tsx
+<Textarea rows={6} />
+```
+
+The user can continue entering content beyond the initial size.
+
+---
+
+## Accessibility
+
+Textarea includes built-in accessibility support.
+
+### Label Association
+
+Labels are connected to the textarea using matching IDs:
+
+```html
+<label for="textarea-id">
+```
+
+and:
+
+```html
+<textarea id="textarea-id">
+```
+
+This allows assistive technologies to correctly identify the field.
+
+---
+
+### Validation
+
+When an error is present, Textarea communicates the invalid state:
+
+```html
+aria-invalid="true"
+```
+
+Error messages should clearly explain what needs to be corrected.
+
+Example:
+
+```tsx
+<Textarea
+  label="Description"
+  error="Description must be longer than 20 characters"
+/>
+```
+
+---
+
+### Required Fields
+
+Required fields communicate their requirement visually and programmatically:
+
+```html
+aria-required="true"
+```
+
+Example:
+
+```tsx
+<Textarea
+  label="Description"
+  required
+/>
+```
+
+---
+
+## Native HTML Support
+
+Textarea extends native HTML textarea attributes.
+
+Examples:
+
+```tsx
+<Textarea
+  rows={5}
+/>
+```
+
+```tsx
+<Textarea
+  disabled
+/>
+```
+
+```tsx
+<Textarea
+  required
+/>
+```
+
+This allows the component to remain flexible while providing consistent styling and accessibility.
+
+---
+
+## API
+
+### Labels
+
+```tsx
+<Textarea
+  label="Description"
+/>
+```
+
+### Helper Text
+
+```tsx
+<Textarea
+  label="Description"
+  helperText="Provide additional context"
+/>
+```
+
+### Error Message
+
+```tsx
+<Textarea
+  label="Description"
+  error="Please enter a valid description"
+/>
+```
+
+### Sizing
+
+```tsx
+<Textarea
+  rows={6}
+/>
+```
+
+---
+
+## Design Philosophy
+
+Textarea should make collecting longer-form input predictable and accessible.
+
+The component intentionally avoids unnecessary variants.
+
+Instead, it builds on:
+
+- Native HTML behavior
+- Consistent form patterns
+- Semantic design tokens
+- Accessible defaults
+
+<Controls />
