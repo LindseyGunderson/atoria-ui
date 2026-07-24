@@ -1,0 +1,120 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as CardStories from "./Card.stories";
+
+<Meta of={CardStories} />
+
+# Card
+
+The `Card` component provides a flexible surface for grouping related content.
+
+Cards are one of the most common layout primitives in user interfaces. Rather than enforcing a rigid structure, the Card component is intentionally composable, allowing you to arrange headings, text, actions, images, or other components in whatever layout best fits your application.
+
+---
+
+## Usage
+
+Use Card to visually separate related content from the surrounding interface.
+
+```tsx
+<Card>
+  <h3>Project Overview</h3>
+  <p>
+    A reusable container for organizing content while maintaining consistent
+    spacing and styling.
+  </p>
+</Card>
+```
+
+---
+
+## Default Card
+
+The default Card provides a surface with consistent spacing, border, rounded corners, and elevation.
+
+<Canvas of={CardStories.Default} />
+
+---
+
+## Outlined Variant
+
+The outlined variant removes the shadow while keeping the border and spacing.
+
+Use this variant when you want a lighter visual appearance or when cards are displayed inside another elevated container.
+
+<Canvas of={CardStories.Outlined} />
+
+---
+
+## Content Composition
+
+Cards are intentionally flexible and can contain headings, descriptions, metadata, buttons, forms, or any other React components.
+
+Rather than prescribing a fixed layout, Atoria encourages composition so each card can adapt to the needs of the interface.
+
+<Canvas of={CardStories.WithContent} />
+
+---
+
+## Interactive Content
+
+Cards often contain interactive elements such as buttons, links, or forms.
+
+When possible, place interactive controls **inside** the Card instead of making the entire Card clickable. This provides better accessibility and clearer keyboard navigation.
+
+<Canvas of={CardStories.Interactive} />
+
+---
+
+## API
+
+<Controls />
+
+---
+
+## Design Tokens
+
+The Card component uses the following design tokens from the Atoria design system.
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>`bg-surface`</td>
+      <td>Card background color</td>
+    </tr>
+
+    <tr>
+      <td> `border-border` </td>
+      <td>Border color</td>
+    </tr>
+
+    <tr>
+      <td>`rounded-card`</td>
+      <td>Border radius</td>
+    </tr>
+
+    <tr>
+      <td>`shadow-card`</td>
+      <td>Card elevation</td>
+    </tr>
+
+    <tr>
+      <td>`p-6`</td>
+      <td>Default internal spacing</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Accessibility
+
+- Use semantic HTML elements inside the Card whenever possible.
+- Interactive elements such as buttons and links should remain individually focusable.
+- Cards should organize related content but should not replace proper page structure or heading hierarchy.
