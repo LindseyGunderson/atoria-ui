@@ -60,7 +60,7 @@ export const Input = forwardRef<
             "border-border",
             "transition-colors",
             "focus:border-primary",
-            "focus:ring-primary/20",
+            "focus:ring-focus",
             error
               ? [
                   "border-error",
