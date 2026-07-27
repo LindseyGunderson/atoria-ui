@@ -1,0 +1,219 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as AvatarStories from "./Avatar.stories";
+
+<Meta of={AvatarStories} />
+
+# Avatar
+
+The `Avatar` component represents a user or entity through an image, initials, or fallback state.
+
+Avatars provide a consistent visual identity pattern across applications while handling common scenarios:
+
+- Profile images
+- Initial-based placeholders
+- Missing user information
+- Size variations
+- Shape variations
+
+The component focuses on presentation only. User data, image sources, and fallback decisions should be managed by the consuming application.
+
+---
+
+## Usage
+
+Use Avatar when representing a person, account, or entity within an interface.
+
+Common examples include:
+
+- User profiles
+- Comment authors
+- Team members
+- Account menus
+- Activity feeds
+
+---
+
+## Default Avatar
+
+The default Avatar displays initials generated from a provided name.
+
+<Canvas of={AvatarStories.Default} />
+
+```tsx
+<Avatar name="Lindsay Smith" />
+```
+
+---
+
+## Image Avatar
+
+When an image source is provided, Avatar displays the image instead of initials.
+
+<Canvas of={AvatarStories.WithImage} />
+
+```tsx
+<Avatar
+  src="/profile-image.jpg"
+  alt="Profile picture"
+  name="Lindsay Smith"
+/>
+```
+
+### Accessibility
+
+When using an image:
+
+- Always provide meaningful `alt` text.
+- If the image is decorative, provide an empty `alt` value.
+- The `name` prop can be used as a fallback when `alt` is not provided.
+
+---
+
+## Initials
+
+Avatar automatically generates initials when a name is provided without an image.
+
+<Canvas of={AvatarStories.WithInitials} />
+
+Example:
+
+```tsx
+<Avatar name="Lindsay Smith" />
+```
+
+This displays:
+
+```text
+LS
+```
+
+Initial generation provides a simple fallback when profile images are unavailable.
+
+---
+
+## Sizes
+
+Avatar supports three size options:
+
+- `sm`
+- `md`
+- `lg`
+
+<Canvas of={AvatarStories.Sizes} />
+
+```tsx
+<Avatar name="Lindsay Smith" size="sm" />
+
+<Avatar name="Lindsay Smith" size="md" />
+
+<Avatar name="Lindsay Smith" size="lg" />
+```
+
+Use sizes consistently based on the surrounding interface.
+
+<table>
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Recommended usage</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>`sm`</td>
+      <td>Compact lists, tables, and metadata</td>
+    </tr>
+
+    <tr>
+      <td>`md`</td>
+      <td>Default user representation</td>
+    </tr>
+
+    <tr>
+      <td>`lg`</td>
+      <td>Profile sections or prominent user displays</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Shapes
+
+Avatar supports multiple shape options.
+
+<Canvas of={AvatarStories.Shapes} />
+
+```tsx
+<Avatar
+  name="Lindsay Smith"
+  variant="circle"
+/>
+
+<Avatar
+  name="Lindsay Smith"
+  variant="square"
+/>
+```
+
+The circular variant is recommended for user profiles, while the square variant can be used for entities such as organizations or applications.
+
+---
+
+## Empty State
+
+When no image or name is provided, Avatar displays a fallback indicator.
+
+<Canvas of={AvatarStories.Empty} />
+
+```tsx
+<Avatar />
+```
+
+Applications may replace this fallback behavior with a custom icon or placeholder when needed.
+
+---
+
+## Props
+
+<Controls />
+
+---
+
+## Accessibility Guidelines
+
+### Images
+
+Provide meaningful alternative text when using profile images.
+
+```tsx
+<Avatar
+  src="/profile.jpg"
+  alt="Jane Doe"
+/>
+```
+
+### Initials
+
+Initials should not be the only method of identifying a user. Consider providing additional context through nearby text or accessible labels.
+
+### Color Contrast
+
+Ensure Avatar background colors and text meet WCAG contrast requirements.
+
+---
+
+## Design Notes
+
+Avatar is intentionally lightweight and flexible.
+
+It does not manage:
+
+- User data fetching
+- Image loading states
+- Status indicators
+- Presence states
+- User permissions
+
+These patterns should be composed alongside Avatar when needed.

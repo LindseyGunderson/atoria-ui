@@ -3,132 +3,135 @@
     /* ========================================
     Brand Colors
     ======================================== */
-    --brand-50: #fdf4f4;
-    --brand-100: #f8e5e5;
-    --brand-200: #efcaca;
-    --brand-300: #dfa2a2;
-    --brand-400: #c96f72;
-    --brand-500: #ad4b51;
-    --brand-600: #913b43;
-    --brand-700: #763139;
-    --brand-800: #612b32;
-    --brand-900: #3d171d;
+    --atoria-brand-50: #fdf4f4;
+    --atoria-brand-100: #f8e5e5;
+    --atoria-brand-200: #efcaca;
+    --atoria-brand-300: #dfa2a2;
+    --atoria-brand-400: #c96f72;
+    --atoria-brand-500: #ad4b51;
+    --atoria-brand-600: #913b43;
+    --atoria-brand-700: #763139;
+    --atoria-brand-800: #612b32;
+    --atoria-brand-900: #3d171d;
 
 
     /* ========================================
     Neutral Colors
     ======================================== */
-    --neutral-white: #ffffff;
-    --neutral-50: #faf9f7;
-    --neutral-100: #f4f1ee;
-    --neutral-200: #e7e2dc;
-    --neutral-300: #d1c9c0;
-    --neutral-400: #a89f95;
-    --neutral-500: #7c7268;
-    --neutral-600: #5c534b;
-    --neutral-700: #423b35;
-    --neutral-800: #2c2723;
-    --neutral-900: #181513;
+    --atoria-neutral-white: #ffffff;
+    --atoria-neutral-50: #faf9f7;
+    --atoria-neutral-100: #f4f1ee;
+    --atoria-neutral-200: #e7e2dc;
+    --atoria-neutral-300: #d1c9c0;
+    --atoria-neutral-400: #a89f95;
+    --atoria-neutral-500: #7c7268;
+    --atoria-neutral-600: #5c534b;
+    --atoria-neutral-700: #423b35;
+    --atoria-neutral-800: #2c2723;
+    --atoria-neutral-900: #181513;
 
 
     /* ========================================
     Gold Accent
     ======================================== */
-    --gold-50: #fbf7f2;
-    --gold-100: #f7ede6;
-    --gold-200: #edd6c5;
-    --gold-300: #d9b08f;
-    --gold-400: #bd875d;
-    --gold-500: #9f6844;
+    --atoria-gold-50: #fbf7f2;
+    --atoria-gold-100: #f7ede6;
+    --atoria-gold-200: #edd6c5;
+    --atoria-gold-300: #d9b08f;
+    --atoria-gold-400: #bd875d;
+    --atoria-gold-500: #9f6844;
 
 
     /* ========================================
     Feedback Colors
     ======================================== */
-    --error-500: #9f1239;
-    --success-500: #166534;
-    --warning-500: #a16207;
-    --info-500: #1e40af;
+    --atoria-error-500: #9f1239;
+    --atoria-success-500: #166534;
+    --atoria-warning-500: #a16207;
+    --atoria-info-500: #1e40af;
 
 
     /* ========================================
     Typography
     ======================================== */
-    --font-display:
+    --atoria-font-display:
         "Instrument Serif",
         Georgia,
         serif;
 
-    --font-family-body:
+    --atoria-font-family-body:
         "Instrument Sans",
         system-ui,
         sans-serif;
 
+
     /* ========================================
     Font Sizes
     ======================================== */
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
+    --atoria-font-size-xs: 0.75rem;
+    --atoria-font-size-sm: 0.875rem;
+    --atoria-font-size-md: 1rem;
+    --atoria-font-size-lg: 1.125rem;
+    --atoria-font-size-xl: 1.25rem;
+    --atoria-font-size-2xl: 1.5rem;
+    --atoria-font-size-3xl: 1.875rem;
+    --atoria-font-size-4xl: 2.25rem;
 
 
     /* ========================================
     Font Weights
     ======================================== */
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    --atoria-font-weight-normal: 400;
+    --atoria-font-weight-medium: 500;
+    --atoria-font-weight-semibold: 600;
+    --atoria-font-weight-bold: 700;
 
 
     /* ========================================
     Spacing
     ======================================== */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
+    --atoria-space-1: 0.25rem;
+    --atoria-space-2: 0.5rem;
+    --atoria-space-3: 0.75rem;
+    --atoria-space-4: 1rem;
+    --atoria-space-5: 1.25rem;
+    --atoria-space-6: 1.5rem;
+    --atoria-space-8: 2rem;
+    --atoria-space-10: 2.5rem;
+    --atoria-space-12: 3rem;
+    --atoria-space-16: 4rem;
+    --atoria-space-20: 5rem;
 
 
     /* ========================================
     Radius
     ======================================== */
-    --radius-none: 0;
-    --radius-sm: 0.375rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 0.75rem;
-    --radius-xl: 1rem;
-    --radius-full: 9999px;
+    --atoria-radius-none: 0;
+    --atoria-radius-sm: 0.375rem;
+    --atoria-radius-md: 0.5rem;
+    --atoria-radius-lg: 0.75rem;
+    --atoria-radius-xl: 1rem;
+    --atoria-radius-full: 9999px;
 
 
     /* ========================================
     Shadows
     ======================================== */
-    --shadow-sm:
+    --atoria-shadow-sm:
         0 1px 2px rgb(24 21 19 / 0.05);
-    --shadow-md:
+
+    --atoria-shadow-md:
         0 4px 12px rgb(24 21 19 / 0.08);
-    --shadow-lg:
+
+    --atoria-shadow-lg:
         0 12px 24px rgb(24 21 19 / 0.12);
 
 
     /* ========================================
     Motion
     ======================================== */
-    --duration-fast: 150ms;
-    --duration-normal: 250ms;
-    --duration-slow: 350ms;
+    --atoria-duration-fast: 150ms;
+    --atoria-duration-normal: 250ms;
+    --atoria-duration-slow: 350ms;
 
 }
