@@ -1,0 +1,138 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as DividerStories from "./Divider.stories";
+
+<Meta of={DividerStories} />
+
+# Divider
+
+The `Divider` component provides a visual separator between sections, content groups, or interface elements.
+
+Dividers help create visual hierarchy while maintaining consistency through the design system.
+
+The component supports:
+
+- Horizontal separators
+- Vertical separators
+- Optional labels
+- Theme-based border colors
+
+---
+
+## Usage
+
+Use Divider to separate related content or create visual grouping within an interface.
+
+Common examples include:
+
+- Separating sections within a card
+- Dividing navigation items
+- Separating actions in menus
+- Creating visual breaks between content areas
+
+---
+
+## Default Divider
+
+The default Divider renders as a horizontal line using the design system border color.
+
+<Canvas of={DividerStories.Default} />
+
+```tsx
+<Divider />
+```
+
+---
+
+## Divider With Label
+
+A label can be added when additional context is needed between two sections.
+
+<Canvas of={DividerStories.WithLabel} />
+
+```tsx
+<Divider label="OR" />
+```
+
+This pattern is commonly used for separating alternative actions or content paths.
+
+---
+
+## Vertical Divider
+
+Divider supports a vertical orientation for separating items placed next to each other.
+
+<Canvas of={DividerStories.Vertical} />
+
+```tsx
+<Divider orientation="vertical" />
+```
+
+Vertical dividers require a parent container with a defined height.
+
+Example:
+
+```tsx
+<div className="h-32">
+  <Divider orientation="vertical" />
+</div>
+```
+
+---
+
+## Layout Example
+
+Vertical dividers are commonly used inside horizontal layouts to separate related actions or navigation items.
+
+<Canvas of={DividerStories.Layout} />
+
+```tsx
+<div className="flex h-10 items-center gap-4">
+  <span>Profile</span>
+
+  <Divider orientation="vertical" />
+
+  <span>Settings</span>
+</div>
+```
+
+---
+
+## Props
+
+<Controls />
+
+---
+
+## Accessibility Guidelines
+
+Divider is a visual-only component and should not interrupt the accessibility tree when used purely for presentation.
+
+When the Divider is only decorative:
+
+- Avoid adding unnecessary labels or descriptions.
+- Allow assistive technologies to ignore the element.
+
+If a divider communicates meaningful structure between sections, consider whether semantic HTML elements such as headings, sections, or landmarks would better describe the relationship.
+
+---
+
+## Design Notes
+
+Divider intentionally provides a minimal API.
+
+It does not control:
+
+- Content spacing
+- Layout positioning
+- Section structure
+- Container widths
+
+Spacing and layout decisions should remain controlled by the consuming component.
+
+Divider uses semantic design tokens to ensure consistency across themes:
+
+- Border color
+- Typography colors
+- Spacing utilities
+
+This allows the component to automatically adapt if the design system theme changes.
