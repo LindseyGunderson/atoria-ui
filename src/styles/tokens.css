@@ -45,11 +45,22 @@
     /* ========================================
     Feedback Colors
     ======================================== */
-    --atoria-error-500: #9f1239;
-    --atoria-success-500: #166534;
-    --atoria-warning-500: #a16207;
     --atoria-info-500: #1e40af;
+    --atoria-error-50: #fff1f2;
+    --atoria-error-500: #9f1239;
+    --atoria-error-700: #881337;
 
+    --atoria-success-50: #f0fdf4;
+    --atoria-success-500: #166534;
+    --atoria-success-700: #15803d;
+
+    --atoria-warning-50: #fefce8;
+    --atoria-warning-500: #a16207;
+    --atoria-warning-700: #a16207;
+
+    --atoria-info-50: #eff6ff;
+    --atoria-info-500: #1e40af;
+    --atoria-info-700: #1d4ed8;
 
     /* ========================================
     Typography

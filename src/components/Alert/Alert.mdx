@@ -1,0 +1,204 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as AlertStories from "./Alert.stories";
+
+<Meta of={AlertStories} />
+
+# Alert
+
+The `Alert` component provides contextual feedback messages to communicate important information, warnings, errors, and successful actions.
+
+Alerts are designed to provide clear feedback while maintaining consistency through semantic design tokens.
+
+The component supports:
+
+- Success, error, warning, and informational states
+- Optional titles
+- Optional icons
+- Custom content
+- Theme-based feedback styling
+
+---
+
+## Usage
+
+Use Alert when a user needs feedback about the result of an action or important information related to the current context.
+
+Common examples include:
+
+- Confirming a successful action
+- Displaying validation errors
+- Warning users about potential issues
+- Providing helpful information or guidance
+
+Alert should provide meaningful context and should not be used for decorative messages.
+
+---
+
+## Default Alert
+
+The default Alert uses the informational variant and is intended for general messages.
+
+<Canvas of={AlertStories.Default} />
+
+```tsx
+<Alert>
+  This is an informational alert message.
+</Alert>
+```
+
+---
+
+## Success Alert
+
+Use the success variant when communicating that an action completed successfully.
+
+<Canvas of={AlertStories.Success} />
+
+```tsx
+<Alert variant="success">
+  Your changes have been saved successfully.
+</Alert>
+```
+
+Common examples:
+
+- Saved settings
+- Completed submissions
+- Successful updates
+
+---
+
+## Error Alert
+
+Use the error variant when something has failed or requires user attention.
+
+<Canvas of={AlertStories.Error} />
+
+```tsx
+<Alert
+  variant="error"
+  title="Unable to save changes"
+>
+  Please check your connection and try again.
+</Alert>
+```
+
+Error alerts should provide enough information for users to understand what happened and what action they can take next.
+
+---
+
+## Warning Alert
+
+Use the warning variant when users should be aware of a potential issue before continuing.
+
+<Canvas of={AlertStories.Warning} />
+
+```tsx
+<Alert
+  variant="warning"
+  title="Your session is about to expire"
+>
+  Please save your work before continuing.
+</Alert>
+```
+
+---
+
+## Info Alert
+
+Use the informational variant for general guidance or helpful context.
+
+<Canvas of={AlertStories.Info} />
+
+```tsx
+<Alert variant="info">
+  You can update your profile information at any time.
+</Alert>
+```
+
+---
+
+## Alert With Icon
+
+Icons can be provided to reinforce the meaning of the message.
+
+<Canvas of={AlertStories.WithIcon} />
+
+```tsx
+<Alert
+  variant="success"
+  icon={<CheckIcon />}
+  title="Profile updated"
+>
+  Your changes were saved successfully.
+</Alert>
+```
+
+Icons should support the message rather than replace the text content.
+
+---
+
+## Props
+
+<Controls />
+
+---
+
+## Accessibility Guidelines
+
+Alerts communicate important information and should be used intentionally.
+
+The component uses `role="alert"` to notify assistive technologies when new alert content appears.
+
+Accessibility recommendations:
+
+- Keep messages concise and clear.
+- Provide descriptive text rather than relying only on icons.
+- Use the appropriate semantic variant for the message purpose.
+- Avoid using alerts for content that does not require user attention.
+
+For non-urgent updates that do not require immediate announcement, consider using a different component pattern such as a status message or notification.
+
+---
+
+## Design Notes
+
+Alert uses semantic feedback tokens from the design system rather than hardcoded colors.
+
+The component relies on:
+
+- Feedback background colors
+- Feedback border colors
+- Feedback text colors
+- Shared spacing and radius tokens
+
+This allows Alert styling to remain consistent as themes evolve.
+
+The component intentionally does not include:
+
+- Dismiss functionality
+- Animations
+- Toast behavior
+- Automatic timing
+
+Those patterns should be handled by separate components when needed.
+
+---
+
+## Composition
+
+Alert accepts custom content and icons through composition rather than enforcing a specific internal structure.
+
+Example:
+
+```tsx
+<Alert
+  variant="error"
+  icon={<ErrorIcon />}
+  title="Payment failed"
+>
+  Please update your payment information and try again.
+</Alert>
+```
+
+This keeps the component flexible while maintaining consistent styling and accessibility.

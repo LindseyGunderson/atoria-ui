@@ -58,17 +58,46 @@
   /* ========================================
   Feedback
   ======================================== */
+/* Feedback */
+
   --color-error:
     var(--atoria-error-500);
+
+  --color-error-background:
+    var(--atoria-error-50);
+
+  --color-error-strong:
+    var(--atoria-error-700);
+
 
   --color-success:
     var(--atoria-success-500);
 
+  --color-success-background:
+    var(--atoria-success-50);
+
+  --color-success-strong:
+    var(--atoria-success-700);
+
+
   --color-warning:
     var(--atoria-warning-500);
 
+  --color-warning-background:
+    var(--atoria-warning-50);
+
+  --color-warning-strong:
+    var(--atoria-warning-700);
+
+
   --color-info:
     var(--atoria-info-500);
+
+  --color-info-background:
+    var(--atoria-info-50);
+
+  --color-info-strong:
+    var(--atoria-info-700);
 
 
   /* ========================================
