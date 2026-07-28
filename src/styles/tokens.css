@@ -145,4 +145,29 @@
     --atoria-duration-normal: 250ms;
     --atoria-duration-slow: 350ms;
 
+    --atoria-animate-dialog-overlay: dialog-overlay-in 150ms ease-out;
+    --atoria-animate-dialog-content: dialog-content-in 150ms ease-out;
+
+    @keyframes dialog-overlay-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+        }
+
+        @keyframes dialog-content-in {
+        from {
+            opacity: 0;
+            transform: scale(0.96);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
 }
