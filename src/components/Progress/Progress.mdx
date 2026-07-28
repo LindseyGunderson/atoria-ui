@@ -1,0 +1,255 @@
+import { Meta, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as ProgressStories from "./Progress.stories";
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+The `Progress` component communicates the completion status of a task, process, or operation.
+
+Progress provides a consistent way to visually represent completion while supporting semantic variants, labels, and accessible progress information.
+
+The component supports:
+
+- Percentage-based progress tracking
+- Custom maximum values
+- Optional labels
+- Optional percentage display
+- Semantic status variants
+- Accessible progress attributes
+
+---
+
+## Usage
+
+Use Progress when users need to understand the current state of a task or process.
+
+Common examples include:
+
+- File uploads
+- Form completion
+- Multi-step workflows
+- Data processing
+- Loading operations
+- Task completion
+
+Progress should communicate meaningful status information and should not be used as a decorative loading indicator.
+
+For continuous loading states where completion cannot be determined, consider using a Spinner component instead.
+
+---
+
+## Default Progress
+
+The default Progress component displays completion without additional text.
+
+<Canvas of={ProgressStories.Default} />
+
+```tsx
+<Progress value={40} />
+```
+
+The `value` prop represents the current progress amount.
+
+By default, `max` is set to `100`.
+
+---
+
+## Progress With Label
+
+Labels provide additional context about the operation being completed.
+
+<Canvas of={ProgressStories.WithLabel} />
+
+```tsx
+<Progress
+  value={40}
+  label="Uploading files"
+/>
+```
+
+Use labels when the progress indicator alone does not provide enough context.
+
+---
+
+## Displaying Progress Values
+
+The `showValue` prop displays the current completion percentage.
+
+<Canvas of={ProgressStories.ShowValue} />
+
+```tsx
+<Progress
+  value={65}
+  showValue
+/>
+```
+
+The displayed percentage is calculated automatically from the current value and maximum value.
+
+---
+
+## Label With Progress Value
+
+Labels and values can be combined to provide both context and completion status.
+
+<Canvas of={ProgressStories.WithLabelAndValue} />
+
+```tsx
+<Progress
+  value={75}
+  label="Processing interview questions"
+  showValue
+/>
+```
+
+This pattern is useful for longer-running tasks where users need both a description and current progress.
+
+---
+
+## Variants
+
+Progress supports semantic variants for communicating different states.
+
+<Canvas of={ProgressStories.Variants} />
+
+Available variants:
+
+- `default` - General progress tracking
+- `success` - Completed or successful progress
+- `warning` - Progress requiring attention
+- `error` - Failed or interrupted progress
+
+Example:
+
+```tsx
+<Progress
+  value={75}
+  variant="success"
+/>
+```
+
+---
+
+## Complete Progress
+
+A completed progress state can be represented using a value of `100`.
+
+<Canvas of={ProgressStories.Complete} />
+
+```tsx
+<Progress
+  value={100}
+  variant="success"
+  label="Complete"
+  showValue
+/>
+```
+
+---
+
+## Custom Maximum Values
+
+Progress can represent values that do not use a maximum of `100`.
+
+<Canvas of={ProgressStories.CustomMax} />
+
+```tsx
+<Progress
+  value={3}
+  max={5}
+  label="Completed steps"
+  showValue
+/>
+```
+
+The component calculates the completion percentage automatically:
+
+```
+3 / 5 = 60%
+```
+
+---
+
+## Props
+
+<Controls />
+
+---
+
+## Accessibility Guidelines
+
+Progress uses the native progress pattern through ARIA attributes.
+
+The component communicates:
+
+- Current value with `aria-valuenow`
+- Minimum value with `aria-valuemin`
+- Maximum value with `aria-valuemax`
+
+Example output:
+
+```html
+<div
+  role="progressbar"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="75"
+>
+</div>
+```
+
+Accessibility recommendations:
+
+- Provide a meaningful label when the purpose of the progress indicator is not obvious.
+- Avoid using color alone to communicate status.
+- Use appropriate variants based on the meaning of the progress state.
+- Do not use Progress for indefinite loading states.
+
+---
+
+## Design Notes
+
+Progress uses semantic design tokens rather than hardcoded colors.
+
+The component relies on:
+
+- Primary color tokens
+- Feedback color tokens
+- Border tokens
+- Shared radius tokens
+- Motion tokens
+
+The track represents incomplete progress using a neutral surface, while the indicator communicates the current completion state.
+
+---
+
+## Composition
+
+Progress is intentionally lightweight and focuses only on displaying completion status.
+
+The component does not include:
+
+- Automatic loading behavior
+- Timers
+- Data fetching logic
+- Internal state management
+- Complex animations
+
+These behaviors should be controlled by the consuming application.
+
+Example:
+
+```tsx
+function UploadStatus() {
+  return (
+    <Progress
+      value={uploadPercentage}
+      label="Uploading files"
+      showValue
+    />
+  );
+}
+```
+
+This keeps Progress reusable across different application contexts while maintaining consistent visual and accessibility patterns.
