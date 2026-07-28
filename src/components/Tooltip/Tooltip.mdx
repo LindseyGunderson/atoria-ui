@@ -1,0 +1,221 @@
+import { Meta, Canvas } from "@storybook/addon-docs/blocks";
+import * as TooltipStories from "./Tooltip.stories";
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+The `Tooltip` component provides contextual information when users hover over or focus on an element.
+
+Tooltips are designed to provide additional context without interrupting the user's workflow.
+
+Common use cases include:
+
+- Explaining unfamiliar actions
+- Providing additional information for icon-only buttons
+- Clarifying interface elements
+- Displaying short pieces of helpful information
+
+Tooltips should not contain critical information or interactive content. If users need to interact with the content, consider using a Popover or Dialog component instead.
+
+---
+
+## Usage
+
+Wrap a trigger element with the `Tooltip` component and provide the content that should be displayed.
+
+```tsx
+<Tooltip content="Save changes">
+  <button>
+    Save
+  </button>
+</Tooltip>
+```
+
+The tooltip appears when the trigger element receives hover or keyboard focus.
+
+---
+
+## Default
+
+The default Tooltip appears above the trigger element.
+
+<Canvas of={TooltipStories.Default} />
+
+---
+
+## Positions
+
+The Tooltip supports four placement options:
+
+- `top`
+- `bottom`
+- `left`
+- `right`
+
+Use the `side` prop to control the tooltip placement relative to the trigger.
+
+```tsx
+<Tooltip
+  content="Additional information"
+  side="right"
+>
+  <button>
+    Hover me
+  </button>
+</Tooltip>
+```
+
+<Canvas of={TooltipStories.Positions} />
+
+---
+
+## Long Content
+
+Tooltips should generally contain short descriptions.
+
+Longer content can be used when additional context is needed, but avoid placing large amounts of information inside a tooltip.
+
+<Canvas of={TooltipStories.LongContent} />
+
+---
+
+## Icon Buttons
+
+Tooltips are commonly used with icon-only buttons to provide additional visual context.
+
+Icon buttons should always include an accessible label.
+
+The tooltip helps sighted users understand the action, while `aria-label` provides the accessible name for assistive technology.
+
+```tsx
+<button aria-label="Delete item">
+  <DeleteIcon />
+</button>
+```
+
+<Canvas of={TooltipStories.IconButton} />
+
+---
+
+## Accessibility
+
+The Tooltip component supports accessibility through:
+
+- `aria-describedby` linking the trigger and tooltip content
+- Hover interactions
+- Keyboard focus interactions
+- Non-interactive tooltip content
+
+### Guidelines
+
+Use tooltips when:
+
+- Additional context is helpful but not required
+- The information is short and descriptive
+- The trigger's purpose may not be immediately obvious
+
+Avoid tooltips when:
+
+- The information is required to complete a task
+- The content requires user interaction
+- A longer explanation is needed
+
+---
+
+## Best Practices
+
+### Good Example
+
+```tsx
+<Tooltip content="Copy link">
+  <button>
+    Copy
+  </button>
+</Tooltip>
+```
+
+---
+
+### Icon Button Example
+
+```tsx
+<Tooltip content="Settings">
+  <button aria-label="Settings">
+    ⚙
+  </button>
+</Tooltip>
+```
+
+---
+
+### Avoid
+
+```tsx
+<Tooltip content="Are you sure you want to permanently delete this item?">
+  <button>
+    Delete
+  </button>
+</Tooltip>
+```
+
+Confirmation actions should use a Dialog component instead.
+
+---
+
+## API
+
+### Tooltip Props
+
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><code>content</code></td>
+      <td><code>ReactNode</code></td>
+      <td>—</td>
+      <td>Content displayed inside the tooltip</td>
+    </tr>
+
+    <tr>
+      <td><code>children</code></td>
+      <td><code>ReactElement</code></td>
+      <td>—</td>
+      <td>Element that triggers the tooltip</td>
+    </tr>
+
+    <tr>
+      <td><code>side</code></td>
+      <td>
+        <code>"top" | "bottom" | "left" | "right"</code>
+      </td>
+      <td><code>"top"</code></td>
+      <td>Controls tooltip placement</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## Design Notes
+
+The Tooltip component follows Atoria's design system principles:
+
+- Consistent spacing and radius tokens
+- Shared surface styling
+- Accessible interaction patterns
+- Reusable component composition
+
+Future improvements may include:
+
+- Advanced positioning and collision detection
+- Automatic placement adjustments
+- Configurable show and hide delays

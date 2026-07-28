@@ -139,4 +139,11 @@
   --color-disabled:
     var(--atoria-neutral-100);
 
+
+  /* ========================================
+  Transitions/Motion
+  ======================================== */
+  --transition-fast:
+    var(--atoria-duration-fast);
+
 }
