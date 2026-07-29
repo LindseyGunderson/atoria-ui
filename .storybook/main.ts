@@ -16,7 +16,6 @@ const config: StorybookConfig = {
 
   async viteFinal(config) {
     return mergeConfig(config, {
-      base: "/atoria-ui/",
       plugins: [tailwindcss()],
     });
   },

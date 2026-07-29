@@ -45,7 +45,6 @@
     /* ========================================
     Feedback Colors
     ======================================== */
-    --atoria-info-500: #1e40af;
     --atoria-error-50: #fff1f2;
     --atoria-error-500: #9f1239;
     --atoria-error-700: #881337;
@@ -147,8 +146,9 @@
 
     --atoria-animate-dialog-overlay: dialog-overlay-in 150ms ease-out;
     --atoria-animate-dialog-content: dialog-content-in 150ms ease-out;
+}
 
-    @keyframes dialog-overlay-in {
+@keyframes dialog-overlay-in {
         from {
             opacity: 0;
         }
@@ -169,5 +169,3 @@
             transform: scale(1);
         }
     }
-
-}

@@ -146,7 +146,7 @@
   --transition-fast:
     var(--atoria-duration-fast);
   --animate-dialog-overlay: 
-    var(----atoria-animate-dialog-overlay);
+    var(--atoria-animate-dialog-overlay);
   --animate-dialog-content: 
-    var(----atoria-animate-dialog-content);
+    var(--atoria-animate-dialog-content);
 }
