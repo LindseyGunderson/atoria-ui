@@ -1,0 +1,279 @@
+import { Meta, Story, Canvas, Controls } from "@storybook/addon-docs/blocks";
+
+import * as ToastStories from "./Toast.stories";
+
+<Meta of={ToastStories} />
+
+# Toast
+
+The Toast component provides lightweight, temporary feedback messages for users after an action occurs.
+
+Toasts are commonly used for:
+
+- Successful actions
+- Errors or failures
+- Warnings that require attention
+- Informational updates
+
+The component supports:
+
+- Multiple variants
+- Icons
+- Auto-dismiss behavior
+- Manual dismissal
+- Animated entrance and exit transitions
+- Provider-based state management
+
+---
+
+## Examples
+
+### Default
+
+<Canvas of={ToastStories.Default} />
+
+### Success
+
+<Canvas of={ToastStories.Success} />
+
+### Error
+
+<Canvas of={ToastStories.Error} />
+
+### Warning
+
+<Canvas of={ToastStories.Warning} />
+
+### Info
+
+<Canvas of={ToastStories.Info} />
+
+### Multiple Toasts
+
+<Canvas of={ToastStories.Multiple} />
+
+---
+
+# Usage
+
+Toast notifications are managed through the `ToastProvider`.
+
+Wrap your application with the provider:
+
+```tsx
+<ToastProvider>
+  <App />
+  <ToastContainer />
+</ToastProvider>
+````
+
+Then use the `useToast` hook to trigger notifications:
+
+```tsx
+const { addToast } = useToast();
+
+addToast({
+  title: "Profile updated",
+  description: "Your changes were saved successfully.",
+  variant: "success",
+});
+```
+
+---
+
+# Variants
+
+Toast supports four semantic feedback states.
+
+<table>
+  <thead>
+    <tr>
+      <th>Variant</th>
+      <th>Purpose</th>
+      <th>Icon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>success</td>
+      <td>Confirms a completed action.</td>
+      <td>Check circle</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>Communicates a failed action or issue.</td>
+      <td>Alert circle</td>
+    </tr>
+    <tr>
+      <td>warning</td>
+      <td>Highlights something requiring attention.</td>
+      <td>Alert triangle</td>
+    </tr>
+    <tr>
+      <td>info</td>
+      <td>Provides general information or updates.</td>
+      <td>Information icon</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+# Behavior
+
+## Auto Dismiss
+
+Toasts automatically dismiss after a default duration.
+
+The lifecycle is:
+
+```
+Toast appears
+      ↓
+Timer starts
+      ↓
+Closing animation begins
+      ↓
+Toast is removed
+```
+
+---
+
+## Manual Dismiss
+
+Users can manually close a toast using the close button.
+
+Manual dismissal uses the same closing animation as auto-dismiss.
+
+---
+
+## Multiple Toasts
+
+Multiple notifications can appear at the same time.
+
+Toasts are stacked vertically and managed independently.
+
+---
+
+# Props
+
+## Toast
+
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>title</code></td>
+      <td><code>string</code></td>
+      <td>—</td>
+      <td>Main notification heading.</td>
+    </tr>
+    <tr>
+      <td><code>description</code></td>
+      <td><code>string</code></td>
+      <td>—</td>
+      <td>Additional supporting information.</td>
+    </tr>
+    <tr>
+      <td><code>variant</code></td>
+      <td><code>"success" | "error" | "warning" | "info"</code></td>
+      <td><code>"info"</code></td>
+      <td>Controls semantic styling and icon.</td>
+    </tr>
+    <tr>
+      <td><code>duration</code></td>
+      <td><code>number</code></td>
+      <td><code>5000</code></td>
+      <td>Controls how long before auto-dismiss begins.</td>
+    </tr>
+    <tr>
+      <td><code>onClose</code></td>
+      <td><code>() =&gt; void</code></td>
+      <td>—</td>
+      <td>Callback triggered after closing animation completes.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## ToastProvider
+
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>children</code></td>
+      <td><code>ReactNode</code></td>
+      <td>—</td>
+      <td>Application content wrapped by the provider.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+## ToastContainer
+
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>children</code></td>
+      <td><code>ReactNode</code></td>
+      <td>—</td>
+      <td>Renders active toast notifications.</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+# Accessibility
+
+Toast notifications follow accessible feedback patterns:
+
+* Uses semantic status messaging.
+* Error notifications use assertive alert behavior.
+* Icons are decorative and hidden from screen readers.
+* Users can manually dismiss notifications.
+* Notifications remain readable with supporting text.
+
+---
+
+# Design Notes
+
+Toast uses semantic feedback tokens rather than hardcoded colors.
+
+Variants consume the design system feedback palette:
+
+* Success uses success tokens.
+* Error uses error tokens.
+* Warning uses warning tokens.
+* Info uses information tokens.
+
+This keeps Toast consistent with other feedback components such as Alert.
+
+```
+```
