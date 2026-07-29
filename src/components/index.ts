@@ -7,3 +7,5 @@ export * from "./Card";
 export * from "./Divider";
 export * from "./Progress";
 export * from "./Tooltip";
+export * from "./Dialog";
+export * from "./Toast";

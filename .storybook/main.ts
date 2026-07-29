@@ -12,8 +12,11 @@ const config: StorybookConfig = {
     options: {},
   },
 
+  staticDirs: ["../public"],
+
   async viteFinal(config) {
     return mergeConfig(config, {
+      base: "/atoria-ui/",
       plugins: [tailwindcss()],
     });
   },
