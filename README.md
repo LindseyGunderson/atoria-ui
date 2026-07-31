@@ -1,10 +1,10 @@
+<img width="1051" height="718" alt="image" src="https://github.com/user-attachments/assets/071eb185-d74c-4204-8831-3f4939e0d15b" />
+
 # Atoria UI
 
 A modern React component library focused on reusable UI patterns, accessible interactions, and scalable design system foundations.
 
 Atoria UI was created as a personal exploration into building and documenting reusable components using modern frontend practices. The goal of this project was to create a small but thoughtful component library while exploring component architecture, design tokens, accessibility, and Storybook-driven development.
-
-![Atoria UI Preview](../atoria-ui/src/assets/atoria-preview.png)
 
 ## Live Demo
 
