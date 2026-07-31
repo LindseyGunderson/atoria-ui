@@ -9,7 +9,7 @@ Atoria UI was created as a personal exploration into building and documenting re
 ## Live Demo
 
 View Landing Page:
-[Atoria Marketing Page](atoria-ui.vercel.app)
+[Atoria Marketing Page](https://lindseygunderson.github.io/atoria-ui/)
 
 View the Storybook documentation:
 [Atoria UI Storybook](https://lindseygunderson.github.io/atoria-ui/)
